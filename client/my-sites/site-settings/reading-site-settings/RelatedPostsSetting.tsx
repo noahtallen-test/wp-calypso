@@ -26,7 +26,7 @@ export const RelatedPostsSetting = ( {
 	const translate = useTranslate();
 	return (
 		<>
-			<FormLabel>{ translate( 'Related Posts' ) }</FormLabel>
+			<FormLabel className="increase-margin-bottom-fix">{ translate( 'Related Posts' ) }</FormLabel>
 			<RelatedPostsFormFieldset
 				fields={ fields }
 				handleToggle={ handleToggle }
