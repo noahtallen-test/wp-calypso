@@ -7,8 +7,7 @@ import { useEffect, useMemo } from '@wordpress/element';
 import useSiteIntent from '../../../dotcom-fse/lib/site-intent/use-site-intent';
 import useSitePlan from '../../../dotcom-fse/lib/site-plan/use-site-plan';
 import { selectors as starterPageTemplatesSelectors } from '../../../starter-page-templates/store';
-import { selectors as wpcomBlockEditorNavSidebarSelectors } from '../../../wpcom-block-editor-nav-sidebar/src/store';
-import { selectors as wpcomWelcomeGuideSelectors } from '../store';
+import { store as welcomeGuideStore } from '../store';
 import { getEditorType } from './get-editor-type';
 import getTourSteps from './tour-steps';
 import './style-tour.scss';
@@ -20,7 +19,6 @@ type StarterPageTemplatesSelectors = SelectFromMap< typeof starterPageTemplatesS
 type WpcomBlockEditorNavSidebarSelectors = SelectFromMap<
 	typeof wpcomBlockEditorNavSidebarSelectors
 >;
-type WpcomWelcomeGuideSelectors = SelectFromMap< typeof wpcomWelcomeGuideSelectors >;
 type CoreEditPostPlaceholder = {
 	isInserterOpened: ( ...args: unknown[] ) => boolean;
 };
@@ -31,16 +29,12 @@ type CoreInterfacePlaceholder = {
 function LaunchWpcomWelcomeTour() {
 	const { show, isNewPageLayoutModalOpen, isManuallyOpened } = useSelect(
 		( select ) => ( {
-			show: (
-				select( 'automattic/wpcom-welcome-guide' ) as WpcomWelcomeGuideSelectors
-			 ).isWelcomeGuideShown(),
+			show: select( welcomeGuideStore ).isWelcomeGuideShown(),
+			isManuallyOpened: select( welcomeGuideStore ).isWelcomeGuideManuallyOpened(),
 			// Handle the case where the new page pattern modal is initialized and open
 			isNewPageLayoutModalOpen:
 				select( 'automattic/starter-page-layouts' ) &&
 				( select( 'automattic/starter-page-layouts' ) as StarterPageTemplatesSelectors ).isOpen(),
-			isManuallyOpened: (
-				select( 'automattic/wpcom-welcome-guide' ) as WpcomWelcomeGuideSelectors
-			 ).isWelcomeGuideManuallyOpened(),
 		} ),
 		[]
 	);
@@ -86,7 +80,7 @@ function LaunchWpcomWelcomeTour() {
 function WelcomeTour( { siteIntent }: { siteIntent?: string } ) {
 	const sitePlan = useSitePlan( window._currentSiteId );
 	const localeSlug = useLocale();
-	const { setShowWelcomeGuide } = useDispatch( 'automattic/wpcom-welcome-guide' );
+	const { setShowWelcomeGuide } = useDispatch( welcomeGuideStore );
 	const isGutenboarding = window.calypsoifyGutenberg?.isGutenboarding;
 	const isWelcomeTourNext = () => {
 		return new URLSearchParams( document.location.search ).has( 'welcome-tour-next' );
@@ -153,16 +147,10 @@ function WelcomeTour( { siteIntent }: { siteIntent?: string } ) {
 			tourRating: {
 				enabled: true,
 				useTourRating: () => {
-					return useSelect(
-						( select ) =>
-							(
-								select( 'automattic/wpcom-welcome-guide' ) as WpcomWelcomeGuideSelectors
-							 ).getTourRating(),
-						[]
-					);
+					return useSelect( ( select ) => select( welcomeGuideStore ).getTourRating(), [] );
 				},
 				onTourRate: ( rating ) => {
-					dispatch( 'automattic/wpcom-welcome-guide' ).setTourRating( rating );
+					dispatch( welcomeGuideStore ).setTourRating( rating );
 					recordTracksEvent( 'calypso_editor_wpcom_tour_rate', {
 						thumbs_up: rating === 'thumbs-up',
 						is_gutenboarding: false,

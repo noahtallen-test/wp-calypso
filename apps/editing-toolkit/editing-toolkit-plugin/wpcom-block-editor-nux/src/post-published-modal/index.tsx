@@ -5,12 +5,10 @@ import { useEffect, useRef, useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import React from 'react';
 import NuxModal from '../nux-modal';
-import { selectors as wpcomWelcomeGuideSelectors } from '../store';
+import { store as welcomeGuideStore } from '../store';
 import postPublishedImage from './images/post-published.svg';
-import type { SelectFromMap } from '@automattic/data-stores';
 import './style.scss';
 
-type WpcomWelcomeGuideSelectors = SelectFromMap< typeof wpcomWelcomeGuideSelectors >;
 type CoreEditorPlaceholder = {
 	getCurrentPost: ( ...args: unknown[] ) => { link: string };
 	getCurrentPostType: ( ...args: unknown[] ) => string;
@@ -36,16 +34,13 @@ const PostPublishedModal: React.FC = () => {
 	);
 	const previousIsCurrentPostPublished = useRef( isCurrentPostPublished );
 	const shouldShowFirstPostPublishedModal = useSelect(
-		( select ) =>
-			(
-				select( 'automattic/wpcom-welcome-guide' ) as WpcomWelcomeGuideSelectors
-			 ).getShouldShowFirstPostPublishedModal(),
+		( select ) => select( welcomeGuideStore ).getShouldShowFirstPostPublishedModal(),
 		[]
 	);
 	const [ isOpen, setIsOpen ] = useState( false );
 	const closeModal = () => setIsOpen( false );
 	const { fetchShouldShowFirstPostPublishedModal, setShouldShowFirstPostPublishedModal } =
-		useDispatch( 'automattic/wpcom-welcome-guide' );
+		useDispatch( welcomeGuideStore );
 
 	useEffect( () => {
 		fetchShouldShowFirstPostPublishedModal();
