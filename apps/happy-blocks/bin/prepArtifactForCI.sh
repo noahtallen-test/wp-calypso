@@ -7,12 +7,13 @@ set -o pipefail
 find ./block-library/* -type d -name "*" -prune ! -name "shared" |\
 while read -r block;
 do
-	mkdir -p "./release-files/${block//\.\.\//}"; 
-	cp -r $block/build/* "./release-files/${block//\.\.\//}/"; 
+	mkdir -p "./release-files/${block//\.\.\//}";
+	cp -r $block/build/* "./release-files/${block//\.\.\//}/";
 done
 
 # Add the index.php file
 cp ./index.php ./README.md ./release-files/
 cp ./translations-manifest.json ./release-files/
+cp ./dist/build_meta.json ./release-files/
 
 printf "Finished configuration of the @automattic/happy-blocks plugin artifacts directory.\n"
