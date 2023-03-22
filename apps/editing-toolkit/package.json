@@ -70,7 +70,7 @@
 		"@automattic/whats-new": "workspace:^",
 		"@babel/core": "^7.17.5",
 		"@emotion/react": "^11.4.1",
-		"@popperjs/core": "^2.10.2",
+		"@popperjs/core": "^2.11.6",
 		"@sentry/browser": "^7.33.0",
 		"@wordpress/a11y": "^3.22.0",
 		"@wordpress/api-fetch": "^6.19.0",
