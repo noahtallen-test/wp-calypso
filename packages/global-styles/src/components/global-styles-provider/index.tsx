@@ -17,7 +17,11 @@ const cleanEmptyObject = ( object: any ) => {
 	return isEmpty( cleanedNestedObjects ) ? undefined : cleanedNestedObjects;
 };
 
-const useGlobalStylesUserConfig = () => {
+const useGlobalStylesUserConfig = (): [
+	boolean,
+	GlobalStylesObject,
+	( config: object ) => unknown
+] => {
 	const [ userConfig, setUserConfig ] = useState< GlobalStylesObject >( {
 		settings: {},
 		styles: {},
@@ -36,10 +40,13 @@ const useGlobalStylesUserConfig = () => {
 		[ setUserConfig ]
 	);
 
-	return [ !! true, userConfig, setConfig ];
+	return [ !! userConfig, userConfig, setConfig ];
 };
 
-const useGlobalStylesBaseConfig = ( siteId: number | string, stylesheet: string ) => {
+const useGlobalStylesBaseConfig = (
+	siteId: number | string,
+	stylesheet: string
+): [ boolean, GlobalStylesObject? ] => {
 	const { data } = useGetGlobalStylesBaseConfig( siteId, stylesheet );
 
 	return [ !! data, data ];
