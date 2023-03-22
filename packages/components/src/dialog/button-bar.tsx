@@ -1,7 +1,7 @@
 import classnames from 'classnames';
 import { isValidElement, cloneElement } from 'react';
 import Button from '../button';
-import type { ReactElement, ReactNode, FunctionComponent } from 'react';
+import type { ReactNode, FunctionComponent } from 'react';
 
 export type BaseButton = {
 	action: string;
@@ -15,10 +15,8 @@ export type BaseButton = {
 	target?: string;
 };
 
-export type Button = ReactElement | BaseButton;
-
 type Props = {
-	buttons?: Button[];
+	buttons?: BaseButton[];
 	baseClassName: string;
 	onButtonClick: ( button: BaseButton ) => void;
 };
