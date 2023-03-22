@@ -62,7 +62,7 @@
 		"@types/canvas-confetti": "^1.6.0",
 		"@types/qrcode.react": "^1.0.2",
 		"qrcode.react": "^1.0.1",
-		"typescript": "^4.7.4"
+		"typescript": "^5.0.2"
 	},
 	"scripts": {
 		"clean": "tsc --build ./tsconfig.json ./tsconfig-cjs.json --clean && rm -rf dist",

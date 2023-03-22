@@ -35,7 +35,7 @@
 	},
 	"devDependencies": {
 		"@automattic/calypso-typescript-config": "workspace:^",
-		"typescript": "^4.7.4",
+		"typescript": "^5.0.2",
 		"wpcom-proxy-request": "workspace:^"
 	},
 	"peerDependencies": {

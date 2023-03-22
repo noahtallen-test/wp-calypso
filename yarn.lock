@@ -46,7 +46,7 @@ __metadata:
   resolution: "@automattic/accessible-focus@workspace:packages/accessible-focus"
   dependencies:
     "@automattic/calypso-typescript-config": "workspace:^"
-    typescript: ^4.7.4
+    typescript: ^5.0.2
   languageName: unknown
   linkType: soft
 
@@ -94,7 +94,7 @@ __metadata:
     react-dom: ^17.0.2
     react-query: ^3.32.1
     tslib: ^2.3.0
-    typescript: ^4.7.4
+    typescript: ^5.0.2
     utility-types: ^3.10.0
     wpcom-proxy-request: "workspace:^"
   peerDependencies:
@@ -115,7 +115,7 @@ __metadata:
   dependencies:
     "@automattic/calypso-typescript-config": "workspace:^"
     tslib: ^2.3.0
-    typescript: ^4.7.4
+    typescript: ^5.0.2
     wpcom-proxy-request: "workspace:^"
   languageName: unknown
   linkType: soft
@@ -130,7 +130,7 @@ __metadata:
     debug: ^4.3.3
     hash.js: ^1.1.7
     tslib: ^2.3.0
-    typescript: ^4.7.4
+    typescript: ^5.0.2
     uuid: ^8.3.2
   languageName: unknown
   linkType: soft
@@ -205,7 +205,7 @@ __metadata:
     semver: ^7.3.2
     terser-webpack-plugin: ^5.2.4
     thread-loader: ^3.0.4
-    typescript: ^4.7.4
+    typescript: ^5.0.2
     webpack-cli: ^4.9.2
   peerDependencies:
     postcss: ^8.4.5
@@ -240,7 +240,7 @@ __metadata:
     "@types/node": ^18.11.18
     cookie: ^0.4.1
     tslib: ^2.3.0
-    typescript: ^4.7.4
+    typescript: ^5.0.2
   languageName: unknown
   linkType: soft
 
@@ -278,7 +278,7 @@ __metadata:
     node-fetch: ^2.6.7
     playwright: ^1.30
     totp-generator: ^0.0.12
-    typescript: ^4.7.4
+    typescript: ^5.0.2
   languageName: unknown
   linkType: soft
 
@@ -347,7 +347,7 @@ __metadata:
     "@automattic/calypso-config": "workspace:^"
     "@automattic/calypso-typescript-config": "workspace:^"
     i18n-calypso: "workspace:^"
-    typescript: ^4.7.4
+    typescript: ^5.0.2
   peerDependencies:
     react: ^17.0.2
   languageName: unknown
@@ -385,7 +385,7 @@ __metadata:
     debug: ^4.3.3
     react: ^17.0.2
     react-dom: ^17.0.2
-    typescript: ^4.7.4
+    typescript: ^5.0.2
   languageName: unknown
   linkType: soft
 
@@ -401,7 +401,7 @@ __metadata:
   dependencies:
     "@automattic/calypso-typescript-config": "workspace:^"
     photon: "workspace:^"
-    typescript: ^4.7.4
+    typescript: ^5.0.2
   languageName: unknown
   linkType: soft
 
@@ -442,7 +442,7 @@ __metadata:
     prop-types: ^15.7.2
     qrcode.react: ^1.0.1
     react-modal: ^3.14.3
-    typescript: ^4.7.4
+    typescript: ^5.0.2
     utility-types: ^3.10.0
     wpcom-proxy-request: "workspace:^"
   peerDependencies:
@@ -471,7 +471,7 @@ __metadata:
     prop-types: ^15.7.2
     react: ^17.0.2
     react-dom: ^17.0.2
-    typescript: ^4.7.4
+    typescript: ^5.0.2
   peerDependencies:
     react: ^17.0.2
     react-dom: ^17.0.2
@@ -485,7 +485,7 @@ __metadata:
     "@automattic/calypso-typescript-config": "workspace:^"
     cookie: ^0.4.1
     tslib: ^2.3.0
-    typescript: ^4.7.4
+    typescript: ^5.0.2
   languageName: unknown
   linkType: soft
 
@@ -511,7 +511,7 @@ __metadata:
     qs: ^6.9.1
     redux: ^4.1.2
     tslib: ^2.3.0
-    typescript: ^4.7.4
+    typescript: ^5.0.2
     use-debounce: ^3.1.0
     utility-types: ^3.10.0
     validator: ^13.5.2
@@ -540,7 +540,7 @@ __metadata:
     redux: ^4.1.2
     swiper: ^4.5.1
     tslib: ^2.3.0
-    typescript: ^4.7.4
+    typescript: ^5.0.2
     utility-types: ^3.10.0
     webpack: ^5.68.0
     wpcom-proxy-request: "workspace:^"
@@ -581,7 +581,7 @@ __metadata:
     reakit-utils: ^0.15.1
     redux: ^4.1.2
     tslib: ^2.3.0
-    typescript: ^4.7.4
+    typescript: ^5.0.2
     utility-types: ^3.10.0
     webpack: ^5.68.0
   peerDependencies:
@@ -615,7 +615,7 @@ __metadata:
     react: ^17.0.2
     react-dom: ^17.0.2
     tslib: ^2.3.0
-    typescript: ^4.7.4
+    typescript: ^5.0.2
   peerDependencies:
     "@wordpress/data": ^7.6.0
     "@wordpress/element": ^4.20.0
@@ -651,7 +651,7 @@ __metadata:
     react: ^17.0.2
     react-dom: ^17.0.2
     tslib: ^2.3.0
-    typescript: ^4.7.4
+    typescript: ^5.0.2
     use-debounce: ^3.1.0
     uuid: ^8.3.2
   peerDependencies:
@@ -668,7 +668,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@automattic/domain-utils@workspace:packages/domain-utils"
   dependencies:
-    typescript: ^4.7.4
+    typescript: ^5.0.2
   languageName: unknown
   linkType: soft
 
@@ -713,7 +713,7 @@ __metadata:
     react: ">=16.8 <18"
     react-dom: ">=16.8 <18"
     tslib: ">=2.3.0"
-    typescript: ^4.7.4
+    typescript: ^5.0.2
   languageName: unknown
   linkType: soft
 
@@ -724,7 +724,7 @@ __metadata:
     "@automattic/calypso-polyfills": "workspace:^"
     "@automattic/calypso-typescript-config": "workspace:^"
     tslib: ^2.3.0
-    typescript: ^4.7.4
+    typescript: ^5.0.2
   languageName: unknown
   linkType: soft
 
@@ -734,7 +734,7 @@ __metadata:
   dependencies:
     "@automattic/calypso-typescript-config": "workspace:^"
     tslib: ^2.3.0
-    typescript: ^4.7.4
+    typescript: ^5.0.2
   languageName: unknown
   linkType: soft
 
@@ -743,7 +743,7 @@ __metadata:
   resolution: "@automattic/generate-password@workspace:packages/generate-password"
   dependencies:
     "@automattic/calypso-typescript-config": "workspace:^"
-    typescript: ^4.7.4
+    typescript: ^5.0.2
   languageName: unknown
   linkType: soft
 
@@ -763,7 +763,7 @@ __metadata:
     react-dom: ^17.0.2
     react-query: ^3.32.1
     tslib: ^2.3.0
-    typescript: ^4.7.4
+    typescript: ^5.0.2
     wpcom-proxy-request: "workspace:^"
   languageName: unknown
   linkType: soft
@@ -814,7 +814,7 @@ __metadata:
     react: ^17.0.2
     react-query: ^3.32.1
     socket.io-client: 2.3.0
-    typescript: ^4.7.4
+    typescript: ^5.0.2
     wpcom-proxy-request: "workspace:^"
   peerDependencies:
     react: ^17.0.2
@@ -846,7 +846,7 @@ __metadata:
     react: ^17.0.2
     react-dom: ^17.0.2
     react-draggable: ^4.4.4
-    typescript: ^4.7.4
+    typescript: ^5.0.2
   peerDependencies:
     "@wordpress/data": ^7.6.0
     "@wordpress/element": ^4.20.0
@@ -874,7 +874,7 @@ __metadata:
     react-dom: ^17.0.2
     react-test-renderer: ^17.0.2
     tslib: ^2.3.0
-    typescript: ^4.7.4
+    typescript: ^5.0.2
   languageName: unknown
   linkType: soft
 
@@ -933,7 +933,7 @@ __metadata:
     "@types/jest": ^27.4.0
     "@types/node": ^18.11.18
     allure-js-commons: 2.0.0-beta.9
-    typescript: ^4.7.4
+    typescript: ^5.0.2
   languageName: unknown
   linkType: soft
 
@@ -942,7 +942,7 @@ __metadata:
   resolution: "@automattic/js-utils@workspace:packages/js-utils"
   dependencies:
     "@automattic/calypso-typescript-config": "workspace:^"
-    typescript: ^4.7.4
+    typescript: ^5.0.2
   languageName: unknown
   linkType: soft
 
@@ -958,7 +958,7 @@ __metadata:
     "@wordpress/components": ^22.1.0
     "@wordpress/i18n": ^4.22.0
     "@wordpress/react-i18n": ^3.20.0
-    typescript: ^4.7.4
+    typescript: ^5.0.2
   peerDependencies:
     "@wordpress/data": ^7.6.0
     react: ^17.0.2
@@ -981,7 +981,7 @@ __metadata:
     react-dom: ^17.0.2
     redux: ^4.1.2
     tslib: ^2.3.0
-    typescript: ^4.7.4
+    typescript: ^5.0.2
     webpack: ^5.68.0
   languageName: unknown
   linkType: soft
@@ -1021,7 +1021,7 @@ __metadata:
     react-dom: ^17.0.2
     react-router-dom: ^5.1.2
     tslib: ^2.3.0
-    typescript: ^4.7.4
+    typescript: ^5.0.2
     use-debounce: ^3.1.0
   peerDependencies:
     "@wordpress/data": ^7.6.0
@@ -1068,7 +1068,7 @@ __metadata:
     debug: ^4.3.3
     react: ^17.0.2
     react-dom: ^17.0.2
-    typescript: ^4.7.4
+    typescript: ^5.0.2
   peerDependencies:
     "@emotion/react": ^11.4.1
     redux: ^4.1.2
@@ -1232,7 +1232,7 @@ __metadata:
     sass-loader: ^10.1.1
     style-loader: ^1.2.1
     tslib: ^2.3.0
-    typescript: ^4.7.4
+    typescript: ^5.0.2
     webpack: ^5.63.0
     wpcom-proxy-request: "workspace:^"
   peerDependencies:
@@ -1263,7 +1263,7 @@ __metadata:
     react: ^17.0.2
     react-dom: ^17.0.2
     resize-observer-polyfill: 1.5.1
-    typescript: ^4.7.4
+    typescript: ^5.0.2
   peerDependencies:
     "@wordpress/data": ^7.6.0
     react: ^17.0.2
@@ -1288,7 +1288,7 @@ __metadata:
     redux: ^4.1.2
     swiper: ^4.5.1
     tslib: ^2.3.0
-    typescript: ^4.7.4
+    typescript: ^5.0.2
     utility-types: ^3.10.0
     webpack: ^5.68.0
     wpcom-proxy-request: "workspace:^"
@@ -1324,7 +1324,7 @@ __metadata:
     lodash: ^4.17.21
     prop-types: ^15.7.2
     tslib: ^2.3.0
-    typescript: ^4.7.4
+    typescript: ^5.0.2
     uuid: ^8.3.2
   peerDependencies:
     "@wordpress/data": ^7.6.0
@@ -1363,7 +1363,7 @@ __metadata:
     classnames: ^2.3.1
     postcss: ^8.4.5
     require-from-string: ^2.0.2
-    typescript: ^4.7.4
+    typescript: ^5.0.2
     webpack: ^5.68.0
   peerDependencies:
     react: ^17.0.2
@@ -1424,7 +1424,7 @@ __metadata:
     reakit-utils: ^0.15.1
     redux: ^4.1.2
     tslib: ^2.3.0
-    typescript: ^4.7.4
+    typescript: ^5.0.2
     webpack: ^5.68.0
   peerDependencies:
     react: ^17.0.2
@@ -1440,7 +1440,7 @@ __metadata:
     "@testing-library/jest-dom": ^5.16.2
     "@testing-library/react": ^12.1.3
     debug: ^4.3.3
-    typescript: ^4.7.4
+    typescript: ^5.0.2
   peerDependencies:
     react: ^17.0.2
     react-dom: ^17.0.2
@@ -1459,7 +1459,7 @@ __metadata:
     "@wordpress/i18n": ^4.22.0
     "@wordpress/icons": ^9.13.0
     classnames: ^2.3.1
-    typescript: ^4.7.4
+    typescript: ^5.0.2
   peerDependencies:
     "@wordpress/data": ^7.6.0
     react: ^17.0.2
@@ -1476,7 +1476,7 @@ __metadata:
     "@automattic/calypso-typescript-config": "workspace:^"
     "@testing-library/jest-dom": ^5.16.2
     "@testing-library/react": ^12.1.3
-    typescript: ^4.7.4
+    typescript: ^5.0.2
   peerDependencies:
     "@wordpress/data": ^7.6.0
     react: ^17.0.2
@@ -1523,7 +1523,7 @@ __metadata:
     redux: ^4.1.2
     redux-thunk: ^2.3.0
     tslib: ^2.3.0
-    typescript: ^4.7.4
+    typescript: ^5.0.2
   languageName: unknown
   linkType: soft
 
@@ -1548,7 +1548,7 @@ __metadata:
     classnames: ^2.3.1
     debug: ^4.3.4
     react-popper: ^2.2.5
-    typescript: ^4.5.5
+    typescript: ^5.0.2
   peerDependencies:
     "@wordpress/data": ^7.6.0
     react: ^17.0.2
@@ -1564,7 +1564,7 @@ __metadata:
   dependencies:
     "@automattic/calypso-typescript-config": "workspace:^"
     "@automattic/typography": "workspace:^"
-    typescript: ^4.5.5
+    typescript: ^5.0.2
   peerDependencies:
     "@wordpress/data": ^6.1.5
     react: ^17.0.2
@@ -1597,7 +1597,7 @@ __metadata:
     classnames: ^2.3.1
     debug: ^4.3.4
     react-popper: ^2.2.5
-    typescript: ^4.7.4
+    typescript: ^5.0.2
   peerDependencies:
     "@wordpress/data": ^7.6.0
     react: ^17.0.2
@@ -1613,7 +1613,7 @@ __metadata:
   dependencies:
     "@automattic/calypso-typescript-config": "workspace:^"
     tslib: ^2.3.0
-    typescript: ^4.7.4
+    typescript: ^5.0.2
   languageName: unknown
   linkType: soft
 
@@ -1643,7 +1643,7 @@ __metadata:
   resolution: "@automattic/viewport@workspace:packages/viewport"
   dependencies:
     "@automattic/calypso-typescript-config": "workspace:^"
-    typescript: ^4.7.4
+    typescript: ^5.0.2
   languageName: unknown
   linkType: soft
 
@@ -1814,7 +1814,7 @@ __metadata:
     prop-types: ^15.7.2
     react: ^17.0.2
     react-dom: ^17.0.2
-    typescript: ^4.7.4
+    typescript: ^5.0.2
   peerDependencies:
     "@emotion/react": ^11.4.1
     redux: ^4.1.2
@@ -1933,7 +1933,7 @@ __metadata:
     "@wordpress/url": ^3.23.0
     i18n-calypso: "workspace:^"
     social-logos: ^2.5.2
-    typescript: ^4.7.4
+    typescript: ^5.0.2
   peerDependencies:
     "@wordpress/data": ^7.6.0
     react: ^17.0.2
@@ -4005,6 +4005,24 @@ __metadata:
     esquery: ^1.4.0
     jsdoc-type-pratt-parser: ~3.1.0
   checksum: 7bb082c64a1270ec2a8d604a8fcfa8a9a98745200bf4945e93835e99ab09e93ac43180e24180e7710ac3e9ba2845c0c04ba6c4ce363f1e5ea0511680b33bc2ad
+  languageName: node
+  linkType: hard
+
+"@eslint-community/eslint-utils@npm:^4.2.0":
+  version: 4.3.0
+  resolution: "@eslint-community/eslint-utils@npm:4.3.0"
+  dependencies:
+    eslint-visitor-keys: ^3.3.0
+  peerDependencies:
+    eslint: ^6.0.0 || ^7.0.0 || >=8.0.0
+  checksum: a7e2d085696f118ffa99c1c58ed195a53166e6790b8063e565d3108ec4b0b38c979b44b3e0a7f30daea7de7cf8f9f7973fd07b662a4dc1faeacd0460579be4d4
+  languageName: node
+  linkType: hard
+
+"@eslint-community/regexpp@npm:^4.4.0":
+  version: 4.4.0
+  resolution: "@eslint-community/regexpp@npm:4.4.0"
+  checksum: 30405709bb9db00877469d9b42f09d4824381e7d3c6715d6738f8914a4958855ea0e339e037816f9f5e14c0d9fabc566356bd31e1355f560e775b30ddecad047
   languageName: node
   linkType: hard
 
@@ -7508,18 +7526,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/eslint-plugin@npm:^5.3.0, @typescript-eslint/eslint-plugin@npm:^5.53.0":
-  version: 5.53.0
-  resolution: "@typescript-eslint/eslint-plugin@npm:5.53.0"
+"@typescript-eslint/eslint-plugin@npm:^5.3.0, @typescript-eslint/eslint-plugin@npm:^5.55.0":
+  version: 5.55.0
+  resolution: "@typescript-eslint/eslint-plugin@npm:5.55.0"
   dependencies:
-    "@typescript-eslint/scope-manager": 5.53.0
-    "@typescript-eslint/type-utils": 5.53.0
-    "@typescript-eslint/utils": 5.53.0
+    "@eslint-community/regexpp": ^4.4.0
+    "@typescript-eslint/scope-manager": 5.55.0
+    "@typescript-eslint/type-utils": 5.55.0
+    "@typescript-eslint/utils": 5.55.0
     debug: ^4.3.4
     grapheme-splitter: ^1.0.4
     ignore: ^5.2.0
     natural-compare-lite: ^1.4.0
-    regexpp: ^3.2.0
     semver: ^7.3.7
     tsutils: ^3.21.0
   peerDependencies:
@@ -7528,7 +7546,7 @@ __metadata:
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 815731d08fd4df1a4def1af41e28992ffba708fdde71951eb8874e6b271faed9006ce3399fb8f765130ea4ce1fc375a7ab5bf32c4d424363d5bb73d61fb58846
+  checksum: c643acd0b2db5e70f43e055f0a2da68b333472ec1f12e080f32dba1c92aeac65d33afc9b5163e0dff16fe7877d2951349f7125ba4cad93438c92bc8c70c04be7
   languageName: node
   linkType: hard
 
@@ -7548,40 +7566,30 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/parser@npm:^5.3.0, @typescript-eslint/parser@npm:^5.53.0":
-  version: 5.53.0
-  resolution: "@typescript-eslint/parser@npm:5.53.0"
+"@typescript-eslint/parser@npm:^5.3.0, @typescript-eslint/parser@npm:^5.55.0":
+  version: 5.55.0
+  resolution: "@typescript-eslint/parser@npm:5.55.0"
   dependencies:
-    "@typescript-eslint/scope-manager": 5.53.0
-    "@typescript-eslint/types": 5.53.0
-    "@typescript-eslint/typescript-estree": 5.53.0
+    "@typescript-eslint/scope-manager": 5.55.0
+    "@typescript-eslint/types": 5.55.0
+    "@typescript-eslint/typescript-estree": 5.55.0
     debug: ^4.3.4
   peerDependencies:
     eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: ba6eb98d6a91fe143c0aeb63571897e9a0e1be6aa70280efc9160a155c0379637d7b7c6cd4ce3059caadd0a5b6c4d305b6fed21d9983b6c83d8f71b1335bd290
+  checksum: 60b105fdbcac7a9cb319293fef3963b8875891f6b4b88995a797a62792fd1616c3a1393e9d1c018220b48877e9e20a08eefcce5cb0ce2f1dfc2194426fb8086e
   languageName: node
   linkType: hard
 
-"@typescript-eslint/scope-manager@npm:5.53.0":
-  version: 5.53.0
-  resolution: "@typescript-eslint/scope-manager@npm:5.53.0"
+"@typescript-eslint/scope-manager@npm:5.55.0":
+  version: 5.55.0
+  resolution: "@typescript-eslint/scope-manager@npm:5.55.0"
   dependencies:
-    "@typescript-eslint/types": 5.53.0
-    "@typescript-eslint/visitor-keys": 5.53.0
-  checksum: 27711e9d0a1253aa996092b54db39a445f1d481ef3344e0ad99a9892b2c59db93aa8629005fe9385c20ddc948b86130097fa51cd5036aabb706e49c956218a2a
-  languageName: node
-  linkType: hard
-
-"@typescript-eslint/scope-manager@npm:5.54.0":
-  version: 5.54.0
-  resolution: "@typescript-eslint/scope-manager@npm:5.54.0"
-  dependencies:
-    "@typescript-eslint/types": 5.54.0
-    "@typescript-eslint/visitor-keys": 5.54.0
-  checksum: b3e48219c68a02d91c672c66c66d82f6fde7c65dae6b795f4dc4e43ee8a1de545f8cd515885fd671b173c6e4d4aa1446b899dd3f536f5778c76bf37f1e2fd5bb
+    "@typescript-eslint/types": 5.55.0
+    "@typescript-eslint/visitor-keys": 5.55.0
+  checksum: 1efd4594f29a32f4a35479af45a9404b91b370ec3cdaeb5b07d31d95964d276d1d9615283978921e26e926c9105bfabe8ef053d22fd2a1570306276d3647336c
   languageName: node
   linkType: hard
 
@@ -7595,12 +7603,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/type-utils@npm:5.53.0":
-  version: 5.53.0
-  resolution: "@typescript-eslint/type-utils@npm:5.53.0"
+"@typescript-eslint/type-utils@npm:5.55.0":
+  version: 5.55.0
+  resolution: "@typescript-eslint/type-utils@npm:5.55.0"
   dependencies:
-    "@typescript-eslint/typescript-estree": 5.53.0
-    "@typescript-eslint/utils": 5.53.0
+    "@typescript-eslint/typescript-estree": 5.55.0
+    "@typescript-eslint/utils": 5.55.0
     debug: ^4.3.4
     tsutils: ^3.21.0
   peerDependencies:
@@ -7608,21 +7616,14 @@ __metadata:
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 6d543d43fb75028e6febf6ce04b57cd87b5733f637432a3387dd7549df9b66420019329256655e2e7ff204417cf0a77826e0824689fc98d279eff470e48d9b73
+  checksum: fe321050377d86d198cd3d0d7e13cf9098d65d48f787c155c896b93ccf107b82ae253f3872c8f2b2e464b86a3a9c4809289abfacc0c43bc4fa65be808666c88d
   languageName: node
   linkType: hard
 
-"@typescript-eslint/types@npm:5.53.0":
-  version: 5.53.0
-  resolution: "@typescript-eslint/types@npm:5.53.0"
-  checksum: f90a16c427cc7255dea626ab1aed8ef4fce6a54a929f334adecabee99ee4be1e4b7454f04bcc334c4aad0b5332178466fe1bb3b30c98fb31d6ebb353f5140b66
-  languageName: node
-  linkType: hard
-
-"@typescript-eslint/types@npm:5.54.0":
-  version: 5.54.0
-  resolution: "@typescript-eslint/types@npm:5.54.0"
-  checksum: dec34efd330b7731a36e767ec18bdf6d9e89399963f9e77f0cc14043b320b81fbd1a8e10eae3c2866a765a540626e843522878349d6ec73f09e270ee384c9df5
+"@typescript-eslint/types@npm:5.55.0":
+  version: 5.55.0
+  resolution: "@typescript-eslint/types@npm:5.55.0"
+  checksum: d5eb71df4bdba4e9b3faf5bd4c7f64bceef0001ca83b2596a796d5c12f61070713788e5861ed424d012a5c3cdc175fd7b130acb33b1ca9b5fae77932088c87bf
   languageName: node
   linkType: hard
 
@@ -7633,12 +7634,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/typescript-estree@npm:5.53.0":
-  version: 5.53.0
-  resolution: "@typescript-eslint/typescript-estree@npm:5.53.0"
+"@typescript-eslint/typescript-estree@npm:5.55.0":
+  version: 5.55.0
+  resolution: "@typescript-eslint/typescript-estree@npm:5.55.0"
   dependencies:
-    "@typescript-eslint/types": 5.53.0
-    "@typescript-eslint/visitor-keys": 5.53.0
+    "@typescript-eslint/types": 5.55.0
+    "@typescript-eslint/visitor-keys": 5.55.0
     debug: ^4.3.4
     globby: ^11.1.0
     is-glob: ^4.0.3
@@ -7647,25 +7648,7 @@ __metadata:
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 781aaaadf878003cbb69a8ab6c77b7459e19b11dfaba9af14065ea3a111da4b96efd5fd1c1027cefc5a06258e13bab17d41d2dbb5c161e33ebcbcd0dcb9a4968
-  languageName: node
-  linkType: hard
-
-"@typescript-eslint/typescript-estree@npm:5.54.0":
-  version: 5.54.0
-  resolution: "@typescript-eslint/typescript-estree@npm:5.54.0"
-  dependencies:
-    "@typescript-eslint/types": 5.54.0
-    "@typescript-eslint/visitor-keys": 5.54.0
-    debug: ^4.3.4
-    globby: ^11.1.0
-    is-glob: ^4.0.3
-    semver: ^7.3.7
-    tsutils: ^3.21.0
-  peerDependenciesMeta:
-    typescript:
-      optional: true
-  checksum: e3f7d0c387d62c0e9c111f6de34d6a30e2207a23469335460776380b94dcb7eb10e64d5619473459bc7d4009847b95f7471bc7f292250b2c47b92465e22fd181
+  checksum: 6b7a41a5425f1a6a018139a76b5c583516d64e4c055f2c37436ad97ae8abcd22671962a8bd30b5c60be2e64b9501c36acf5b5ad43d4a8416acccedac43247d20
   languageName: node
   linkType: hard
 
@@ -7687,59 +7670,31 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/utils@npm:5.53.0":
-  version: 5.53.0
-  resolution: "@typescript-eslint/utils@npm:5.53.0"
+"@typescript-eslint/utils@npm:5.55.0, @typescript-eslint/utils@npm:^5.10.0":
+  version: 5.55.0
+  resolution: "@typescript-eslint/utils@npm:5.55.0"
   dependencies:
+    "@eslint-community/eslint-utils": ^4.2.0
     "@types/json-schema": ^7.0.9
     "@types/semver": ^7.3.12
-    "@typescript-eslint/scope-manager": 5.53.0
-    "@typescript-eslint/types": 5.53.0
-    "@typescript-eslint/typescript-estree": 5.53.0
+    "@typescript-eslint/scope-manager": 5.55.0
+    "@typescript-eslint/types": 5.55.0
+    "@typescript-eslint/typescript-estree": 5.55.0
     eslint-scope: ^5.1.1
-    eslint-utils: ^3.0.0
     semver: ^7.3.7
   peerDependencies:
     eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
-  checksum: 7374cf7e147d174aa67644a070aea9968af08d3391468265b4a6933745a2eefd638935626734c52faa86cc27d79a710b4c42d535c36b08e29295189ab4de0225
+  checksum: d2e1c6c1add496cd01b3f2f083048eaf36df844aa472886f181b228f2956be6f652937b6cf618dbde4473443d4ea982abd5049cedbb5e2708ca5573803e8cbb5
   languageName: node
   linkType: hard
 
-"@typescript-eslint/utils@npm:^5.10.0":
-  version: 5.54.0
-  resolution: "@typescript-eslint/utils@npm:5.54.0"
+"@typescript-eslint/visitor-keys@npm:5.55.0":
+  version: 5.55.0
+  resolution: "@typescript-eslint/visitor-keys@npm:5.55.0"
   dependencies:
-    "@types/json-schema": ^7.0.9
-    "@types/semver": ^7.3.12
-    "@typescript-eslint/scope-manager": 5.54.0
-    "@typescript-eslint/types": 5.54.0
-    "@typescript-eslint/typescript-estree": 5.54.0
-    eslint-scope: ^5.1.1
-    eslint-utils: ^3.0.0
-    semver: ^7.3.7
-  peerDependencies:
-    eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
-  checksum: 25932be66c1cafd7a393bf8c236807d4c548b08f4887d98d9e1d136db19a2a6e486b3d48bbcc37e4bdb5ed332d2f4811700470b63cf6d1ee75a2dfb2408f415b
-  languageName: node
-  linkType: hard
-
-"@typescript-eslint/visitor-keys@npm:5.53.0":
-  version: 5.53.0
-  resolution: "@typescript-eslint/visitor-keys@npm:5.53.0"
-  dependencies:
-    "@typescript-eslint/types": 5.53.0
+    "@typescript-eslint/types": 5.55.0
     eslint-visitor-keys: ^3.3.0
-  checksum: 8723cb32b5e39b3fae05299e3bab0298323b9694198ae6a43d2dbc449cbda23934a35c70156c5b92df4b8a62eede982f74fe13bf9693f3b046fba0cb5aaf88cc
-  languageName: node
-  linkType: hard
-
-"@typescript-eslint/visitor-keys@npm:5.54.0":
-  version: 5.54.0
-  resolution: "@typescript-eslint/visitor-keys@npm:5.54.0"
-  dependencies:
-    "@typescript-eslint/types": 5.54.0
-    eslint-visitor-keys: ^3.3.0
-  checksum: cfcff6b2b42a5b3b4865d84ce45263d4c6ee3551dff6250c67ba27d14ab5f040466d9f4aec77b1682cf9e2c554ee43ac70a94cc2a209b65b46a16e908780147f
+  checksum: c2ec2cbab7fddff4a55c381e32b1e1b6893ecd77440fa830ba13de920472e1fd48128ddbf4ab6022d13d7721c695685498915f20cd1146a7dd72287777233ba1
   languageName: node
   linkType: hard
 
@@ -25205,7 +25160,7 @@ fsevents@^1.2.7:
     crc32: ^0.2.2
     debug: ^4.3.3
     seed-random: ^2.2.0
-    typescript: ^4.7.4
+    typescript: ^5.0.2
   languageName: unknown
   linkType: soft
 
@@ -31955,23 +31910,23 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"typescript@npm:^4.5.5, typescript@npm:^4.7.4":
-  version: 4.7.4
-  resolution: "typescript@npm:4.7.4"
+"typescript@npm:^5.0.2":
+  version: 5.0.2
+  resolution: "typescript@npm:5.0.2"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 8c1c4007b6ce5b24c49f0e89173ab9e82687cc6ae54418d1140bb63b82d6598d085ac0f993fe3d3d1fbf87a2c76f1f81d394dc76315bc72c7a9f8561c5d8d205
+  checksum: aa0e2a766412a0c9f609133681753cc88098aa44e079820d203dc0628a8fc3997d4e6b93c2c813c483f770698561c3225c5ab3e5c8896639cfc5d94528e3005f
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@^4.5.5#~builtin<compat/typescript>, typescript@patch:typescript@^4.7.4#~builtin<compat/typescript>":
-  version: 4.7.4
-  resolution: "typescript@patch:typescript@npm%3A4.7.4#~builtin<compat/typescript>::version=4.7.4&hash=a1c5e5"
+"typescript@patch:typescript@^5.0.2#~builtin<compat/typescript>":
+  version: 5.0.2
+  resolution: "typescript@patch:typescript@npm%3A5.0.2#~builtin<compat/typescript>::version=5.0.2&hash=a1c5e5"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 2eb6e31b04fabec84a4d07b5d567deb5ef0a2971d89d9adb16895f148f7d8508adfb12074abc2efc6966805d3664e68ab67925060e5b0ebd8da616db4b151906
+  checksum: bcf56c5089f2ca291e1ceb54d51b84b7dd149cbbc4911d748e7b50428457ef14969c4d76cbc303d8e4547c35aaff61fdc8e8edc6dadb28d183713d627887a63b
   languageName: node
   linkType: hard
 
@@ -33661,8 +33616,8 @@ fsevents@^1.2.7:
     "@types/wordpress__compose": ^4.0.1
     "@types/wordpress__data": ^4.6.10
     "@types/wordpress__data-controls": ^2.2.0
-    "@typescript-eslint/eslint-plugin": ^5.53.0
-    "@typescript-eslint/parser": ^5.53.0
+    "@typescript-eslint/eslint-plugin": ^5.55.0
+    "@typescript-eslint/parser": ^5.55.0
     "@wordpress/base-styles": ^4.13.0
     "@wordpress/components": ^22.1.0
     "@wordpress/data": ^7.6.0
@@ -33748,7 +33703,7 @@ fsevents@^1.2.7:
     stacktrace-gps: ^3.0.3
     stylelint: ^14.11.0
     tslib: ^2.3.0
-    typescript: ^4.7.4
+    typescript: ^5.0.2
     v8-profiler-next: ^1.9.0
     webpack: ^5.68.0
     webpack-bundle-analyzer: ^4.5.0
