@@ -31,7 +31,7 @@ export const ListTile = ( {
 		typeof leading === 'string' ? (
 			<div className="list-tile__leading">{ leading }</div>
 		) : isValidElement( leading ) ? (
-			cloneElement( leading, {
+			cloneElement( leading as React.ReactElement, {
 				className: classNames( 'list-tile__leading', leading.props.className ),
 			} )
 		) : null;
@@ -40,7 +40,7 @@ export const ListTile = ( {
 		typeof trailing === 'string' ? (
 			<div className="list-tile__trailing">{ trailing }</div>
 		) : isValidElement( trailing ) ? (
-			cloneElement( trailing, {
+			cloneElement( trailing as React.ReactElement, {
 				className: classNames( 'list-tile__trailing', trailing.props.className ),
 			} )
 		) : null;
