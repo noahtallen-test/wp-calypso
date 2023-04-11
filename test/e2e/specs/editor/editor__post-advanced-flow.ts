@@ -14,10 +14,17 @@ import {
 	getTestAccountByFeature,
 	envToFeatureKey,
 	ElementHelper,
+	EXTENDED_EDITOR_WAIT_ATOMIC_TIMEOUT,
+	EXTENDED_EDITOR_WAIT_TIMEOUT,
 } from '@automattic/calypso-e2e';
 import { Browser, Page } from 'playwright';
 
 declare const browser: Browser;
+// Used for loading waiting on the editor by navigating back from the published page.
+const timeout =
+	envVariables.TEST_ON_ATOMIC === true
+		? EXTENDED_EDITOR_WAIT_ATOMIC_TIMEOUT
+		: EXTENDED_EDITOR_WAIT_TIMEOUT;
 
 describe( `Editor: Advanced Post Flow`, function () {
 	// Authentication setup.
