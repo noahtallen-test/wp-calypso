@@ -294,7 +294,7 @@ private object HappyBlocks : WPComPluginBuild(
 				cd apps/happy-blocks
 
 				# Run build release script
-				yarn build-ci
+				yarn build
 			"""
 		}
 	}
