@@ -4,11 +4,13 @@
 // eslint-disable-next-line import/no-nodejs-modules
 const { existsSync } = require( 'fs' );
 const path = require( 'path' );
+const BuildMetaPlugin = require( '@automattic/calypso-apps-builder/build-meta-webpack-plugin.cjs' );
 const getBaseWebpackConfig = require( '@automattic/calypso-build/webpack.config.js' );
 const ReadableJsAssetsWebpackPlugin = require( '@wordpress/readable-js-assets-webpack-plugin' );
 const CopyPlugin = require( 'copy-webpack-plugin' );
 const webpack = require( 'webpack' );
 const GenerateChunksMapPlugin = require( '../../build-tools/webpack/generate-chunks-map-plugin' );
+const outputPath = path.join( __dirname, 'dist' );
 
 function ifExists( rule ) {
 	return existsSync( rule.from ) ? rule : undefined;
@@ -42,6 +44,7 @@ function getWebpackConfig( env = { block: '' }, argv ) {
 		},
 		plugins: [
 			...webpackConfig.plugins,
+			BuildMetaPlugin( { outputPath } ),
 			new ReadableJsAssetsWebpackPlugin(),
 			new CopyPlugin( {
 				patterns: [
