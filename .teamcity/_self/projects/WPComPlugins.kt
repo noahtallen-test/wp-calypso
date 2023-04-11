@@ -105,7 +105,7 @@ object CalypsoApps: BuildType({
 			scriptContent = """
 				# Run `yarn build-ci` script for the plugins specified in the glob.
 				# `build-ci` is a specialized build for CI environment.
-				yarn workspaces foreach --verbose --parallel --include '{happy-blocks,@automattic/notifications}' run build-ci
+				yarn workspaces foreach --verbose --parallel --include '{happy-blocks,@automattic/notifications,@automattic/happychat-app}' run build
 			"""
 		}
 
