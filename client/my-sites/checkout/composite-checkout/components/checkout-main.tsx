@@ -255,7 +255,12 @@ export default function CheckoutMain( {
 		logStashEvent( 'thank you url generated', {
 			url,
 		} );
-		return url;
+		try {
+			return encodeURIComponent( url );
+		} catch ( e ) {
+			debug( 'getThankYouUrl could not be encoded', url );
+			return url;
+		}
 	}, [ getThankYouUrlBase ] );
 
 	const contactDetailsType = getContactDetailsType( responseCart );
