@@ -32,7 +32,7 @@ export const useBloggingPrompts = (
 		[ 'blogging-prompts', today + '-' + per_page ],
 		() =>
 			wp.req.get( {
-				path: `/sites/${ siteId }/blogging-prompts?per_page=${ per_page }&after=${ today }`,
+				path: `/sites/${ siteId }/blogging-prompts?per_page=${ per_page }&after=${ today }&order=desc`,
 				apiNamespace: 'wpcom/v3',
 			} ),
 		{
