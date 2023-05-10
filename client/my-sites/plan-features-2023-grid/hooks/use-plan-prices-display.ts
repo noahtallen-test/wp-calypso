@@ -6,7 +6,7 @@ import type { PlanSlug } from '@automattic/calypso-products';
 interface Props {
 	planSlug: PlanSlug;
 	returnMonthly: boolean; // defaults to true
-	siteId: number | null;
+	siteId?: number | null;
 	currentSitePlanSlug?: string | null;
 	withoutProRatedCredits?: boolean;
 }
@@ -25,7 +25,7 @@ export function usePlanPricesDisplay( {
 	discountedPrice: number;
 } {
 	const planPrices = useSelector( ( state ) =>
-		getPlanPrices( state, { planSlug, siteId, returnMonthly } )
+		getPlanPrices( state, { planSlug, siteId: siteId || null, returnMonthly } )
 	);
 	const sitePlanRawPrice = useSelector( ( state ) => {
 		if ( ! siteId ) {
