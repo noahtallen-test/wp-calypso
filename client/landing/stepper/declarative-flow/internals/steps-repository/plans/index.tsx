@@ -1,4 +1,4 @@
-import { is2023PricingGridActivePage } from '@automattic/calypso-products';
+import { is2023PricingGridEnabled } from '@automattic/calypso-products';
 import { DOMAIN_UPSELL_FLOW, START_WRITING_FLOW, StepContainer } from '@automattic/onboarding';
 import { useI18n } from '@wordpress/react-i18n';
 import { recordTracksEvent } from 'calypso/lib/analytics/tracks';
@@ -18,7 +18,7 @@ const plans: Step = function Plans( { navigation, flow } ) {
 
 		submit?.( providedDependencies );
 	};
-	const is2023PricingGridVisible = is2023PricingGridActivePage( window );
+	const is2023PricingGridVisible = is2023PricingGridEnabled();
 
 	const handleGoBack = () => {
 		if ( flow === DOMAIN_UPSELL_FLOW ) {
