@@ -1,4 +1,9 @@
 .hosting {
+	/* Rely on the standard spacing for the underlying elements. */
+	.feature-example {
+		margin-top: 0;
+	}
+
 	.card > .material-icon,
 	.card > .gridicon {
 		display: inline-block;
