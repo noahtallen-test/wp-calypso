@@ -62,5 +62,3 @@ export interface SupportTicket {
 	url: string;
 	when: string;
 }
-
-export type Mode = 'CHAT' | 'EMAIL' | 'FORUM';
