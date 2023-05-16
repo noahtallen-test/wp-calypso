@@ -146,7 +146,7 @@
 		"site-indicator": true,
 		"ssr/prefetch-timebox": true,
 		"stats/new-video-summary": false,
-		"stats/subscribers-section": false,
+		"stats/subscribers-section": true,
 		"stepper-woocommerce-poc": true,
 		"storage-addon": false,
 		"subscriber-csv-upload": true,
@@ -173,7 +173,7 @@
 		"woop": false,
 		"wordpress-action-search": false,
 		"wpcom-user-bootstrap": true,
-		"newsletter/stats": false
+		"newsletter/stats": true
 	},
 	"siftscience_key": "e00e878351",
 	"oauth_client_id": "39911",
