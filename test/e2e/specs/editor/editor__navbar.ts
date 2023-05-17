@@ -1,6 +1,6 @@
 /**
  * @group gutenberg
- * @group calypso-pr
+ * @group calypso-loop
  */
 
 import {
