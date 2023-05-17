@@ -2,7 +2,7 @@ import fs from 'fs/promises';
 import path from 'path';
 import chalk from 'chalk';
 import { BrowserContext, Page } from 'playwright';
-import { TestAccountName } from '..';
+import { DataHelper, TestAccountName } from '..';
 import { getAccountSiteURL, getCalypsoURL } from '../data-helper';
 import { EmailClient } from '../email-client';
 import envVariables from '../env-variables';
@@ -34,7 +34,10 @@ export class TestAccount {
 	 * @param {Page} page Page object.
 	 * @param {string} [url] URL to expect once authenticated and redirections are finished.
 	 */
-	async authenticate( page: Page, { url }: { url?: string | RegExp } = {} ): Promise< void > {
+	async authenticate(
+		page: Page,
+		{ url = new URL( DataHelper.getCalypsoURL( '/home' ) ) }: { url?: URL } = {}
+	): Promise< void > {
 		const browserContext = page.context();
 		await browserContext.clearCookies();
 
@@ -47,9 +50,24 @@ export class TestAccount {
 			await this.logInViaLoginPage( page );
 		}
 
-		if ( url ) {
-			await page.waitForURL( url, { timeout: 20 * 1000 } );
-		}
+		// Begin waiting
+		console.log( 'begin waiting for the redirect after authentication' );
+
+		await Promise.all( [
+			page.waitForResponse( /remote-login.php\?wpcom_remote_login/ ),
+			page.waitForResponse( /wp-login.php\?action=login-endpoint/ ),
+			page.locator( '.wpcom-site__logo' ).waitFor( { state: 'hidden' } ),
+			// page.locator( '.pulsing-dot' ).waitFor( { state: 'hidden' } ),
+		] );
+
+		console.log( 'begin reloading page' );
+		await page.reload();
+
+		console.log( 'finished reload' );
+
+		// if ( url ) {
+		await page.waitForURL( new RegExp( url.href ), { timeout: 20 * 1000 } );
+		// }
 	}
 
 	/**
