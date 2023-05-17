@@ -54,14 +54,14 @@ export class TestAccount {
 		console.log( 'begin waiting for the redirect after authentication' );
 
 		await Promise.all( [
-			page.waitForResponse( /remote-login.php\?wpcom_remote_login/ ),
-			page.waitForResponse( /wp-login.php\?action=login-endpoint/ ),
-			page.locator( '.wpcom-site__logo' ).waitFor( { state: 'hidden' } ),
+			page.waitForResponse( /remote-login.php\?wpcom_remote_login/, { timeout: 20 * 1000 } ),
+			page.waitForResponse( /wp-login.php\?action=login-endpoint/, { timeout: 20 * 1000 } ),
+			page.locator( '.wpcom-site__logo' ).waitFor( { state: 'hidden', timeout: 20 * 1000 } ),
 			// page.locator( '.pulsing-dot' ).waitFor( { state: 'hidden' } ),
 		] );
 
 		console.log( 'begin reloading page' );
-		await page.reload();
+		await page.reload( { timeout: 20 * 1000 } );
 
 		console.log( 'finished reload' );
 
