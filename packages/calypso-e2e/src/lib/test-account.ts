@@ -41,9 +41,14 @@ export class TestAccount {
 		const browserContext = page.context();
 		await browserContext.clearCookies();
 
-		if ( await this.hasFreshAuthCookies() ) {
+		const hasAuthCookies = await this.hasFreshAuthCookies();
+
+		await page.goto( getCalypsoURL( '/' ) );
+
+		if ( hasAuthCookies ) {
 			this.log( 'Found fresh cookies, skipping log in' );
 			await browserContext.addCookies( await this.getAuthCookies() );
+			await page.reload();
 			await page.goto( getCalypsoURL( '/' ) );
 		} else {
 			this.log( 'Logging in via Login Page' );
@@ -53,17 +58,30 @@ export class TestAccount {
 		// Begin waiting
 		console.log( 'begin waiting for the redirect after authentication' );
 
-		await Promise.all( [
-			page.waitForResponse( /remote-login.php\?wpcom_remote_login/, { timeout: 20 * 1000 } ),
-			page.waitForResponse( /wp-login.php\?action=login-endpoint/, { timeout: 20 * 1000 } ),
-			page.locator( '.wpcom-site__logo' ).waitFor( { state: 'hidden', timeout: 20 * 1000 } ),
-			// page.locator( '.pulsing-dot' ).waitFor( { state: 'hidden' } ),
-		] );
+		// const promises: [ any ] = [
+		// 	page.locator( '.wpcom-site__logo' ).waitFor( { state: 'hidden', timeout: 20 * 1000 } ),
+		// ];
 
-		console.log( 'begin reloading page' );
-		await page.reload( { timeout: 20 * 1000 } );
+		// if ( hasAuthCookies ) {
+		// 	promises.push(
+		// 		page.waitForResponse( /remote-login.php\?wpcom_remote_login/, { timeout: 20 * 1000 } )
+		// 	);
+		// 	promises.push(
+		// 		page.waitForResponse( /wp-login.php\?action=login-endpoint/, { timeout: 20 * 1000 } )
+		// 	);
+		// }
+		// await Promise.all( [
+		// 	page.waitForResponse( /remote-login.php\?wpcom_remote_login/, { timeout: 20 * 1000 } ),
+		// 	page.waitForResponse( /wp-login.php\?action=login-endpoint/, { timeout: 20 * 1000 } ),
+		// 	page.locator( '.wpcom-site__logo' ).waitFor( { state: 'hidden', timeout: 20 * 1000 } ),
+		// 	// page.locator( '.pulsing-dot' ).waitFor( { state: 'hidden' } ),
+		// ] );
+		await page.locator( '.wpcom-site__logo' ).waitFor( { state: 'hidden', timeout: 20 * 1000 } );
 
-		console.log( 'finished reload' );
+		// console.log( 'begin reloading page' );
+		// await page.reload( { timeout: 20 * 1000 } );
+
+		// console.log( 'finished reload' );
 
 		// if ( url ) {
 		await page.waitForURL( new RegExp( url.href ), { timeout: 20 * 1000 } );
