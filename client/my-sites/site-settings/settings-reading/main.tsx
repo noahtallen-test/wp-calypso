@@ -34,6 +34,7 @@ type Fields = {
 	subscription_options?: SubscriptionOptions;
 	wpcom_featured_image_in_email?: boolean;
 	wpcom_subscription_emails_use_excerpt?: boolean;
+	wpcom_subscribe_modal?: boolean;
 };
 
 const getFormSettings = ( settings: unknown & Fields ) => {
@@ -56,6 +57,7 @@ const getFormSettings = ( settings: unknown & Fields ) => {
 		subscription_options,
 		wpcom_featured_image_in_email,
 		wpcom_subscription_emails_use_excerpt,
+		wpcom_subscribe_modal,
 	} = settings;
 
 	return {
@@ -73,6 +75,7 @@ const getFormSettings = ( settings: unknown & Fields ) => {
 		...( subscription_options && { subscription_options } ),
 		wpcom_featured_image_in_email: !! wpcom_featured_image_in_email,
 		wpcom_subscription_emails_use_excerpt: !! wpcom_subscription_emails_use_excerpt,
+		wpcom_subscribe_modal: !! wpcom_subscribe_modal,
 	};
 };
 
