@@ -740,10 +740,13 @@ export const PlanComparisonGrid: React.FC< PlanComparisonGridProps > = ( {
 	const hiddenPlans = useMemo( () => [ PLAN_WOOEXPRESS_PLUS, PLAN_ENTERPRISE_GRID_WPCOM ], [] );
 
 	const isMonthly = intervalType === 'monthly';
-	const isLargestBreakpoint = usePricingBreakpoint( 1772 ); // 1500px + 272px (sidebar)
-	const isLargeBreakpoint = usePricingBreakpoint( 1612 ); // 1340px + 272px (sidebar)
-	const isMediumBreakpoint = usePricingBreakpoint( 1340 ); // keeping original breakpoint to match Plan Grid
 
+	// Breakpoints with admin sidebar
+	const isLargeBreakpoint = usePricingBreakpoint( 1553 ); // 1281px + 272px (sidebar)
+	const isMediumBreakpoint = usePricingBreakpoint( 1296 ); // 1024px + 272px (sidebar)
+	const isSmallBreakpoint = usePricingBreakpoint( 1152 ); // 880px + 272px (sidebar)
+
+	// Breakpoints without admin sidebar
 	const isSignupLargeBreakpoint = usePricingBreakpoint( 1281 );
 	const isSignupMediumBreakpoint = usePricingBreakpoint( 1024 );
 	const isSignupSmallBreakpoint = usePricingBreakpoint( 880 );
@@ -771,8 +774,8 @@ export const PlanComparisonGrid: React.FC< PlanComparisonGridProps > = ( {
 
 		let visibleLength = newVisiblePlans.length;
 		if ( ! isInSignup ) {
-			visibleLength = isLargestBreakpoint ? 4 : visibleLength;
-			visibleLength = isLargeBreakpoint ? 3 : visibleLength;
+			visibleLength = isMediumBreakpoint ? 4 : visibleLength;
+			visibleLength = isSmallBreakpoint ? 3 : visibleLength;
 		}
 
 		visibleLength = isSignupLargeBreakpoint ? 4 : visibleLength;
@@ -785,9 +788,9 @@ export const PlanComparisonGrid: React.FC< PlanComparisonGridProps > = ( {
 
 		setVisiblePlans( newVisiblePlans );
 	}, [
-		isLargestBreakpoint,
 		isLargeBreakpoint,
 		isMediumBreakpoint,
+		isSmallBreakpoint,
 		displayedPlansProperties,
 		isInSignup,
 		isSignupLargeBreakpoint,
