@@ -3,5 +3,6 @@ export * from './twitter-preview';
 export * from './linkedin-preview';
 export * from './tumblr-preview';
 export * from './facebook-preview';
+export * from './mastodon-preview';
 export * from './constants';
 export * from './types';
