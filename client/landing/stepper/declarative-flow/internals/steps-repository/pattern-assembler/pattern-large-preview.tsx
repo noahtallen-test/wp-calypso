@@ -81,14 +81,7 @@ const PatternLargePreview = ( {
 			return translate( "It's time to get creative. Add your first pattern to get started." );
 		}
 
-		return translate(
-			'You can view your color and font selections{{br/}}after you select a pattern.',
-			{
-				components: {
-					br: <br />,
-				},
-			}
-		);
+		return translate( 'You can view your color and font selections after you select a pattern.' );
 	};
 
 	const getAction = () => {
