@@ -10,11 +10,13 @@ import {
 import { useDispatch, useSelect } from '@wordpress/data';
 import classnames from 'classnames';
 import { useState, useRef, useMemo } from 'react';
-import { useDispatch as useReduxDispatch } from 'react-redux';
+import { useDispatch as useReduxDispatch, useSelector } from 'react-redux';
 import PremiumGlobalStylesUpgradeModal from 'calypso/components/premium-global-styles-upgrade-modal';
-import { ActiveTheme } from 'calypso/data/themes/use-active-theme-query';
 import { createRecordTracksEvent } from 'calypso/lib/analytics/tracks';
-import { setActiveTheme } from 'calypso/state/themes/actions';
+import { isJetpackSite } from 'calypso/state/sites/selectors';
+import { activateOrInstallThenActivate, setActiveTheme } from 'calypso/state/themes/actions';
+import { getThemeIdFromStylesheet } from 'calypso/state/themes/utils';
+import { useQuery } from '../../../../hooks/use-query';
 import { useSite } from '../../../../hooks/use-site';
 import { useSiteIdParam } from '../../../../hooks/use-site-id-param';
 import { useSiteSlugParam } from '../../../../hooks/use-site-slug-param';
@@ -46,6 +48,7 @@ import type { StepProps } from '../../types';
 import type { OnboardSelect } from '@automattic/data-stores';
 import type { DesignRecipe, Design } from '@automattic/design-picker/src/types';
 import type { GlobalStylesObject } from '@automattic/global-styles';
+import type { ActiveTheme } from 'calypso/data/themes/use-active-theme-query';
 import './style.scss';
 
 const PatternAssembler = ( {
@@ -61,7 +64,7 @@ const PatternAssembler = ( {
 	const [ activePosition, setActivePosition ] = useState( -1 );
 	const [ isPatternPanelListOpen, setIsPatternPanelListOpen ] = useState( false );
 	const { goBack, goNext, submit } = navigation;
-	const { applyThemeWithPatterns } = useDispatch( SITE_STORE );
+	const { applyThemeWithPatterns, assembleSite } = useDispatch( SITE_STORE );
 	const reduxDispatch = useReduxDispatch();
 	const { setPendingAction } = useDispatch( ONBOARD_STORE );
 	const selectedDesign = useSelect(
@@ -77,6 +80,8 @@ const PatternAssembler = ( {
 	const siteId = useSiteIdParam();
 	const siteSlugOrId = siteSlug ? siteSlug : siteId;
 	const locale = useLocale();
+	const isNewSite = !! useQuery().get( 'isNewSite' );
+	const isSiteJetpack = useSelector( ( state ) => isJetpackSite( state, site?.ID ) );
 
 	// Fetching all patterns and categories
 	const allPatterns = useAllPatterns( locale );
@@ -370,16 +375,38 @@ const PatternAssembler = ( {
 
 	const onSubmit = () => {
 		const design = getDesign();
+		const stylesheet = design?.recipe?.stylesheet ?? '';
+		const themeId = getThemeIdFromStylesheet( stylesheet );
 
-		if ( ! siteSlugOrId ) {
+		if ( ! siteSlugOrId || ! site?.ID || ! themeId ) {
 			return;
 		}
 
-		setPendingAction( () =>
-			applyThemeWithPatterns( siteSlugOrId, design, syncedGlobalStylesUserConfig ).then(
-				( theme: ActiveTheme ) => reduxDispatch( setActiveTheme( site?.ID || -1, theme ) )
-			)
-		);
+		if ( isEnabled( 'pattern-assembler/logged-in-showcase' ) ) {
+			setPendingAction( () =>
+				Promise.resolve()
+					.then( () =>
+						reduxDispatch(
+							activateOrInstallThenActivate( themeId, site?.ID, 'assembler', false, false )
+						)
+					)
+					.then( () =>
+						assembleSite( siteSlugOrId, isSiteJetpack ? themeId : stylesheet, themeId, {
+							homeHtml: sections.map( ( pattern ) => pattern.html ).join( '' ),
+							headerHtml: header?.html,
+							footerHtml: footer?.html,
+							globalStyles: syncedGlobalStylesUserConfig,
+							shouldResetContent: isNewSite,
+						} )
+					)
+			);
+		} else {
+			setPendingAction( () =>
+				applyThemeWithPatterns( siteSlugOrId, design, syncedGlobalStylesUserConfig ).then(
+					( theme: ActiveTheme ) => reduxDispatch( setActiveTheme( site?.ID, theme ) )
+				)
+			);
+		}
 
 		recordSelectedDesign( { flow, intent, design } );
 		submit?.();
