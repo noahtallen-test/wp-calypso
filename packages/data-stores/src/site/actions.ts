@@ -612,9 +612,14 @@ export function createActions( clientCreds: WpcomClientCredentials ) {
 					? {
 							body: {
 								software_set: encodeURIComponent( softwareSet ),
+								context: softwareSet,
 							},
 					  }
-					: {} ),
+					: {
+							body: {
+								context: 'unknown',
+							},
+					  } ),
 			} );
 			yield atomicTransferSuccess( siteId, softwareSet );
 		} catch ( _ ) {
