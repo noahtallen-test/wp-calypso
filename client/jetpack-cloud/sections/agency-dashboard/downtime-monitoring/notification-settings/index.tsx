@@ -42,6 +42,7 @@ export default function NotificationSettings( {
 	isLargeScreen,
 }: Props ) {
 	const translate = useTranslate();
+
 	const { updateMonitorSettings, isLoading, isComplete } = useUpdateMonitorSettings( sites );
 	const recordEvent = useJetpackAgencyDashboardRecordTrackEvent( sites, isLargeScreen );
 
