@@ -625,9 +625,8 @@ body.is-section-signup.is-white-signup .layout:not(.dops):not(.is-wccom-oauth-fl
 		.signup-form.is-horizontal {
 			$breakpoint-mobile: 660px;
 			$separator-style: 1px solid #eaeaeb;
-			display: flex;
-			flex-direction: column;
-			flex-wrap: wrap;
+			display: grid;
+			grid-template-columns: repeat(3, auto);
 			margin-top: 40px;
 			justify-content: center;
 

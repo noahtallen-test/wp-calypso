@@ -937,9 +937,18 @@ class SignupForm extends Component {
 		const { translate } = this.props;
 		return (
 			<CheckboxControl
+				className={ classNames( 'signup-form__is-dev-account-checkbox', {
+					'is-checked': this.state.isDevAccount,
+				} ) }
+				__nextHasNoMarginBottom
 				label={ preventWidows(
 					translate(
-						"I'm a developer. Boost my WordPress.com experience and give me early access to developer features"
+						"{{strong}}I'm a developer.{{/strong}} Boost my WordPress.com experience and give me early access to developer features",
+						{
+							components: {
+								strong: <span className="signup-form__is-dev-account-strong" />,
+							},
+						}
 					)
 				) }
 				checked={ this.state.isDevAccount }
