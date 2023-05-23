@@ -119,7 +119,11 @@ const useSiteUnsubscribeMutation = ( blog_id?: string ) => {
 					} );
 				}
 
-				return { previousSiteSubscriptions, previousSubscriptionsCount };
+				return {
+					previousSiteSubscriptions,
+					previousSubscriptionsCount,
+					previousSiteSubscriptionDetails,
+				};
 			},
 			onError: ( error, variables, context ) => {
 				if ( context?.previousSiteSubscriptions ) {
@@ -131,12 +135,19 @@ const useSiteUnsubscribeMutation = ( blog_id?: string ) => {
 						context.previousSubscriptionsCount
 					);
 				}
+				if ( context?.previousSiteSubscriptionDetails ) {
+					queryClient.setQueryData(
+						siteSubscriptionDetailsCacheKey,
+						context.previousSiteSubscriptionDetails
+					);
+				}
 			},
 			onSettled: () => {
-				// pass in more minimal keys, everything to the right will be invalidated
+				// We are not invalidating the `siteSubscriptionDetailsCacheKey`
+				// on purpose because we need the values in place (Site title, icon and
+				// number of subscribers are still displayed in the UI even after unsubscribing).
 				queryClient.invalidateQueries( siteSubscriptionsCacheKey );
 				queryClient.invalidateQueries( subscriptionsCountCacheKey );
-				//queryClient.invalidateQueries( siteSubscriptionDetailsCacheKey );
 			},
 		}
 	);
