@@ -1,6 +1,7 @@
-import { useMutation } from '@tanstack/react-query';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { callApi, getSubscriptionMutationParams } from '../helpers';
-import { useIsLoggedIn } from '../hooks';
+import { useIsLoggedIn, useCacheKey } from '../hooks';
+import type { SiteSubscriptionDetails } from '../types';
 
 type SubscribeParams = {
 	blog_id?: number | string;
@@ -18,40 +19,62 @@ type SubscribeResponse = {
 	};
 };
 
-const useSiteSubscribeMutation = () => {
+const useSiteSubscribeMutation = ( blog_id?: string ) => {
 	const { isLoggedIn } = useIsLoggedIn();
+	const queryClient = useQueryClient();
+	const siteSubscriptionDetailsCacheKey = useCacheKey( [
+		'read',
+		'site-subscription-details',
+		...( blog_id ? [ blog_id ] : [] ),
+	] );
 
-	return useMutation( async ( params: SubscribeParams ) => {
-		if ( ! params.blog_id ) {
-			throw new Error(
-				// reminder: translate this string when we add it to the UI
-				'Something went wrong while subscribing.'
+	return useMutation(
+		async ( params: SubscribeParams ) => {
+			if ( ! params.blog_id ) {
+				throw new Error(
+					// reminder: translate this string when we add it to the UI
+					'Something went wrong while subscribing.'
+				);
+			}
+
+			const { path, apiVersion, body } = getSubscriptionMutationParams(
+				'new',
+				isLoggedIn,
+				params.blog_id,
+				params.url
 			);
+
+			const response = await callApi< SubscribeResponse >( {
+				path,
+				method: 'POST',
+				isLoggedIn,
+				apiVersion,
+				body,
+			} );
+			if ( ! response.subscribed ) {
+				throw new Error(
+					// reminder: translate this string when we add it to the UI
+					'Something went wrong while subscribing.'
+				);
+			}
+
+			return response;
+		},
+		{
+			onMutate: async () => {
+				await queryClient.cancelQueries( siteSubscriptionDetailsCacheKey );
+
+				const previousSiteSubscriptionDetails = queryClient.getQueryData< SiteSubscriptionDetails >(
+					siteSubscriptionDetailsCacheKey
+				);
+
+				return { previousSiteSubscriptionDetails };
+			},
+			onSettled: () => {
+				queryClient.invalidateQueries( siteSubscriptionDetailsCacheKey );
+			},
 		}
-
-		const { path, apiVersion, body } = getSubscriptionMutationParams(
-			'new',
-			isLoggedIn,
-			params.blog_id,
-			params.url
-		);
-
-		const response = await callApi< SubscribeResponse >( {
-			path,
-			method: 'POST',
-			isLoggedIn,
-			apiVersion,
-			body,
-		} );
-		if ( ! response.subscribed ) {
-			throw new Error(
-				// reminder: translate this string when we add it to the UI
-				'Something went wrong while subscribing.'
-			);
-		}
-
-		return response;
-	} );
+	);
 };
 
 export default useSiteSubscribeMutation;
