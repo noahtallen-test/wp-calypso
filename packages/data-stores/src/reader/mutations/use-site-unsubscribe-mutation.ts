@@ -143,9 +143,9 @@ const useSiteUnsubscribeMutation = ( blog_id?: string ) => {
 				}
 			},
 			onSettled: () => {
-				// We are not invalidating the `siteSubscriptionDetailsCacheKey`
-				// on purpose because we need the values in place (Site title, icon and
-				// number of subscribers are still displayed in the UI even after unsubscribing).
+				// We are not invalidating the `siteSubscriptionDetailsCacheKey` on purpose here,
+				// because we need the related values in place (Site title, Site icon and
+				// Subscriber count are still displayed in the UI even after unsubscribing).
 				queryClient.invalidateQueries( siteSubscriptionsCacheKey );
 				queryClient.invalidateQueries( subscriptionsCountCacheKey );
 			},
