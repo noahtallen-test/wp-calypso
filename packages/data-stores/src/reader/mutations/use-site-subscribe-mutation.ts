@@ -68,7 +68,22 @@ const useSiteSubscribeMutation = ( blog_id?: string ) => {
 					siteSubscriptionDetailsCacheKey
 				);
 
+				if ( previousSiteSubscriptionDetails ) {
+					queryClient.setQueryData( siteSubscriptionDetailsCacheKey, {
+						...previousSiteSubscriptionDetails,
+						subscriber_count: previousSiteSubscriptionDetails.subscriber_count + 1,
+					} );
+				}
+
 				return { previousSiteSubscriptionDetails };
+			},
+			onError: ( error, variables, context ) => {
+				if ( context?.previousSiteSubscriptionDetails ) {
+					queryClient.setQueryData(
+						siteSubscriptionDetailsCacheKey,
+						context.previousSiteSubscriptionDetails
+					);
+				}
 			},
 			onSettled: () => {
 				queryClient.invalidateQueries( siteSubscriptionDetailsCacheKey );
